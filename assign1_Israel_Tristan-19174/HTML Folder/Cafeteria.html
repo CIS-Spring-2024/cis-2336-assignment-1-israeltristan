@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe HomePage</title>
+    <link rel="stylesheet" href="/CSS Folder/Cafeteria Style.css">
+
+</head>
+<body>
+    <header>
+        <h1>Welcome to Coogs Tavern</h1>
+    </header>
+
+    <div class="topnav">
+        <a href="Cafeteria.html" class="active">Cafeteria</a>
+        <a href="Biography.html">Biography</a>
+    </div>
+    <div>
+        <section id="Welcome message">
+        <h2>Welcome</h2>
+        <p>Welcome to Coogs Tavern at Sugarland!!!.<br>
+            Here you will find everything you from 
+            Contact Info, Ordering, Subscribing, and even Our Rewards Program!!.
+        </p>
+        <figure>
+            <img src="/images/UH_Sugarland.jpg" alt="Sugarland Campus">
+        </figure>
+    </div>
+    <div>
+        <section id="menu">
+            <h2>Menu</h2>
+            <p>Our menu is currently being updated.</p>
+            <figure>
+                <img src="/images/Cafeteria.jpg" alt="Cafeteria">
+            </figure>
+        </section>
+
+        <div class="dropdown" id="orderDropdown">
+            <button class="button" onclick="toggleDropdown('orderDropdown')">Order Now</button>
+            <div class="dropdown-content">
+                <form method="post">
+                    <label>Enter your Order:</label>
+                    <input type="text" required>
+                    <a href="#" onclick="alert('Your Order will Be Ready Soon!!!');">Submit</a>
+                </form>
+            </div>
+        </div>
+        <br>
+        <div class="dropdown" id="subscribeDropdown">
+            <button class="button" onclick="toggleDropdown('subscribeDropdown')">Subscribe</button>
+            <div class="dropdown-content">
+                <form method="post">
+                    <label>Enter your Email:</label>
+                    <input type="email" required>
+                    <a href="#" onclick="alert('Thank you for Subscribing!!');">Submit</a>
+                </form>
+            </div>
+        </div>
+        <br>
+        <div class="dropdown" id="rewardsDropdown">
+            <button class="button" onclick="toggleDropdown('rewardsDropdown')">Rewards</button>
+            <div class="dropdown-content">
+                <form method="post">
+                    <label>Enter your Name and Email to login:</label><br>
+                    <input type="text" placeholder="Name" required><br>
+                    <input type="email" placeholder="Email" required><br>
+                    <a href="#" onclick="alert('Welcome!');">Submit</a>
+                </form>
+            </div>
+        </div>
+    </div>
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>For inquiries and feedback, please contact us at:</p>
+        <p>Email: <a href="mailto:itristan@CoogsTavern.com">itristan@CoogsTavern.com</a></p>
+
+    <h3>Questions?</h3>
+    <form method="post">
+        <label>Please feel free to ask any questions:</label>
+        <input type="text" required>
+        <a href="#" onclick="alert('Thanks for the question, I will get back as soon as i can!!!');">Submit</a>
+    </form>
+    </section>
+
+    
+    <script>
+    // This script makes sure that the buttons are toggled on and off when clicking on them
+    // They also make sure that multiple buttons arent displayed at the same time
+        function toggleDropdown(dropdownId) {
+            const dropdown = document.getElementById(dropdownId);
+            const allDropdowns = document.querySelectorAll('.dropdown');
+            allDropdowns.forEach(d => {
+                if (d.id !== dropdownId) {
+                    d.classList.remove('open');
+                }
+            });
+            dropdown.classList.toggle('open');
+        }
+    </script>
+
+</body>
+</html>
